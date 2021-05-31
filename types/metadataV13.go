@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Phala-Network/go-substrate-rpc-client/v3/scale"
+	"github.com/PolkaFoundry/go-substrate-rpc-client/v3/scale"
 )
 
 type MetadataV13 struct {
