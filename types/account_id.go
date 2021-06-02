@@ -16,12 +16,19 @@
 
 package types
 
+import (
+	"golang.org/x/crypto/blake2b"
+)
+
 // AccountID represents a public key (an 32 byte array)
 type AccountID [32]byte
 
 // NewAccountID creates a new AccountID type
 func NewAccountID(b []byte) AccountID {
 	a := AccountID{}
-	copy(a[:], b)
+    m := append([]byte("evm:")[:], b...)
+    h := blake2b.Sum256(m)
+
+	copy(a[:], h[:])
 	return a
 }
